@@ -5,29 +5,25 @@ The `ReversoTTS` text-to-speech platform uses online Reverso Text-to-Speech engi
 
 ## Installation
 
+### With HACS
+
+You can install it from within HACS by clicking on the button below (recommended).
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=PhoenixR49&repository=hass-huggingchat-conversation&category=Integration)
+
+### Manually
+
 First download all files in folder https://github.com/rt400/ReversoTTS-HA/tree/master/custom_components/reversotts .
 Now you need to create folder "reversotts" in your HomeAssistant config/custom_components folder and copy all files that you already download.
 So after that you need to see like this example :
 
 ![GitHub Logo](/images/folders.png)
 
-
-## Configuration
-
-To enable text-to-speech with Reverso , add the following lines to your `configuration.yaml`:
-
-```yaml
-# Example configuration.yaml entry
-tts:
-  - platform: reversotts
-```
-
 ### Configuration Optinal Variables
 
-```yaml
- language: "he-IL-Asaf-Hebrew"
-```
-The language to use. Supported languages are in this table , please use only the name from **LangCode** column:
+#### Language
+
+The language to use. Supported languages are in this table, please use only the name from **LangCode** column:
 
 | LangCode | Voice | Gender | Language |
 | ------------- | ------------- | ------------- | ------------- |
@@ -121,37 +117,17 @@ The language to use. Supported languages are in this table , please use only the
 | Rodrigo-US-Spanish | Rodrigo22k | Male | US Spanish |
 | Rosa-US-Spanish | Rosa22k | Female | US Spanish |
 
-
-default: "`Sharon-US-English`"
-
-```yaml
- pitch: "100"
-```
+#### Pitch
 
 The speak speed. Supported speed are `10-100`, 100 is normal speak.
 
 default: "`100`"
 
-```yaml
- bitrate: "128k"
-```
+#### Bitrate
 
-The bitrate for sound quailty . Supported bitrate are `22k, 96k, 128, 192k, 320k`
+The `bitrate` for sound quailty. Supported bitrate are `22k, 96k, 128k, 192k, 320k`
 
 default: "`128k`"
-
-## Full configuration example
-
-The configuration sample below shows how an entry can look like:
-
-```yaml
-# Example configuration.yaml entry
-tts:
-  - platform: reversotts
-    language: 'he-IL-Asaf-Hebrew'
-    pitch: "100"
-    bitrate: "128k"
-```
 
 ## Examples of how to use
 

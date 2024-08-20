@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Le service est déjà configuré"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "language": "Langue",
+                    "pitch": "Vitesse de parole",
+                    "bitrate": "Taux d'échantillonnage"
+                }
+            }
+        }
+    }
+}
