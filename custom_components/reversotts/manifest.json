@@ -1,12 +1,11 @@
 {
   "domain": "reversotts",
   "name": "Reverso TTS",
-  "version": "1.1.0",
-  "documentation": "https://github.com/rt400/ReversoTTS-HA",
+  "version": "2025.12.1",
+  "documentation": "https://github.com/romans3/ReversoTTS-HA",
   "dependencies": [],
-  "codeowners": ["@yuval_mejahez"],
+  "codeowners": ["@romans3"],
   "requirements": ["pyttsreverso==0.4"],
-  "issue_tracker": "https://github.com/rt400/ReversoTTS-HA/issues",
   "iot_class": "cloud_push",
   "config_flow": true
 }
