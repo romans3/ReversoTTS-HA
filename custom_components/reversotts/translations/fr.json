@@ -1,16 +1,42 @@
 {
-    "config": {
-        "abort": {
-            "already_configured": "Le service est déjà configuré"
-        },
-        "step": {
-            "user": {
-                "data": {
-                    "language": "Langue",
-                    "pitch": "Vitesse de parole",
-                    "bitrate": "Taux d'échantillonnage"
-                }
-            }
-        }
+  "title": "Reverso TTS",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer Reverso TTS",
+        "description": "Entrez les paramètres pour le service Reverso TTS."
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter au service Reverso.",
+      "invalid_language": "Langue non prise en charge."
+    },
+    "abort": {
+      "already_configured": "Ce service est déjà configuré."
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Reverso TTS",
+        "description": "Configurer les options supplémentaires pour Reverso TTS."
+      }
+    }
+  },
+  "services": {
+    "send_message": {
+      "name": "Envoyer un message TTS",
+      "description": "Envoyer un message converti en voix via Reverso.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Texte à convertir en voix."
+        },
+        "language": {
+          "name": "Langue",
+          "description": "Langue à utiliser pour la synthèse vocale."
+        }
+      }
+    }
+  }
 }

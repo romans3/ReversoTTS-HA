@@ -1,16 +1,42 @@
 {
-    "config": {
-        "abort": {
-            "already_configured": "Service is already configured"
-        },
-        "step": {
-            "user": {
-                "data": {
-                    "language": "Language",
-                    "pitch": "Speak speed",
-                    "bitrate": "Bitrate"
-                }
-            }
-        }
+  "title": "Reverso TTS",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Reverso TTS",
+        "description": "Enter the settings for the Reverso TTS service."
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the Reverso service.",
+      "invalid_language": "Unsupported language."
+    },
+    "abort": {
+      "already_configured": "This service is already configured."
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Reverso TTS Options",
+        "description": "Configure additional options for Reverso TTS."
+      }
+    }
+  },
+  "services": {
+    "send_message": {
+      "name": "Send TTS message",
+      "description": "Send a message converted to speech using Reverso.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Text to convert into speech."
+        },
+        "language": {
+          "name": "Language",
+          "description": "Language to use for speech synthesis."
+        }
+      }
+    }
+  }
 }

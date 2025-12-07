@@ -1,0 +1,42 @@
+{
+  "title": "Reverso TTS",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura Reverso TTS",
+        "description": "Inserisci le impostazioni per il servizio Reverso TTS."
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al servizio Reverso.",
+      "invalid_language": "Lingua non supportata."
+    },
+    "abort": {
+      "already_configured": "Questo servizio è già configurato."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni Reverso TTS",
+        "description": "Configura le opzioni aggiuntive per Reverso TTS."
+      }
+    }
+  },
+  "services": {
+    "send_message": {
+      "name": "Invia messaggio TTS",
+      "description": "Invia un messaggio convertito in voce tramite Reverso.",
+      "fields": {
+        "message": {
+          "name": "Messaggio",
+          "description": "Testo da convertire in voce."
+        },
+        "language": {
+          "name": "Lingua",
+          "description": "Lingua da usare per la sintesi vocale."
+        }
+      }
+    }
+  }
+}
