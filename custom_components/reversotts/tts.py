@@ -64,24 +64,22 @@ class ReversoTTSEntity(TextToSpeechEntity):
     """The Reverso TTS API provider."""
 
     def __init__(self, lang: str, pitch: int, bitrate: str):
-        """Initialize Reverso TTS provider."""
         self._lang = lang
         self._pitch = pitch
         self._bitrate = bitrate
-        self.name = "Reverso TTS"
+
+        self._attr_name = "Reverso TTS"
+        self._attr_unique_id = f"reversotts_{lang}_{bitrate}"
 
     @property
     def default_language(self):
-        """Return the default language."""
         return self._lang
 
     @property
     def supported_languages(self):
-        """Return list of supported languages."""
         return SUPPORT_LANGUAGES
 
     def get_tts_audio(self, message, language, options=None):
-        """Load TTS using pyttsreverso."""
         if language is None:
             language = self._lang
         try:
@@ -90,7 +88,7 @@ class ReversoTTSEntity(TextToSpeechEntity):
                 voice=language, pitch=self._pitch, bitrate=self._bitrate, msg=message
             )
         except Exception as e:
-            _LOGGER.error("Error while to convert: %s", str(e))
+            _LOGGER.error("Error while converting: %s", e)
             return (None, None)
         return ("mp3", data)
 
