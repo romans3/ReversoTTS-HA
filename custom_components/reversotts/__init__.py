@@ -4,13 +4,12 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 
-PLATFORMS: tuple[Platform] = Platform.TTS
+PLATFORMS = [Platform.TTS]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Reverso TTS from a config entry."""
     await hass.config_entries.async_forward_entry_setup(entry, PLATFORMS)
-
     return True
 
 
