@@ -68,8 +68,20 @@ class ReversoTTSEntity(TextToSpeechEntity):
         self._pitch = pitch
         self._bitrate = bitrate
 
+        # Nome mostrato in UI
         self._attr_name = "Reverso TTS"
+
+        # Unique ID richiesto per entity_id stabile
         self._attr_unique_id = f"reversotts_{lang}_{bitrate}"
+
+        # Device info per far comparire il dispositivo nella UI
+        self._attr_device_info = {
+            "identifiers": {("reversotts", "reversotts_device")},
+            "name": "Reverso TTS",
+            "manufacturer": "Reverso",
+            "model": "Reverso Cloud TTS",
+            "entry_type": "service",
+        }
 
     @property
     def default_language(self):
@@ -79,13 +91,20 @@ class ReversoTTSEntity(TextToSpeechEntity):
     def supported_languages(self):
         return SUPPORT_LANGUAGES
 
+    async def async_say(self, message, **kwargs):
+        """Expose the tts service."""
+        return await self.async_generate_audio(message, **kwargs)
+
     def get_tts_audio(self, message, language, options=None):
         if language is None:
             language = self._lang
         try:
             convert = pyttsreverso.ReversoTTS()
             data = convert.convert_text(
-                voice=language, pitch=self._pitch, bitrate=self._bitrate, msg=message
+                voice=language,
+                pitch=self._pitch,
+                bitrate=self._bitrate,
+                msg=message
             )
         except Exception as e:
             _LOGGER.error("Error while converting: %s", e)
