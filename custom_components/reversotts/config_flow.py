@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 from typing import Any
-
 import voluptuous as vol
 
 from homeassistant import config_entries
@@ -55,11 +54,10 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         self, data: dict[str, Any] | None = None
     ) -> FlowResult:
         """Handle a flow initialized by onboarding."""
-        return self.async_create_entry(
-            title="Reverso TTS",
-            data={
+        return await self.async_step_user(
+            {
                 CONF_LANG: DEFAULT_LANG,
                 CONF_PITCH: DEFAULT_PITCH,
                 CONF_BITRATE: DEFAULT_BITRATE,
-            },
+            }
         )
