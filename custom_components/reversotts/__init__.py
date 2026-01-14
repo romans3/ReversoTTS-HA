@@ -9,7 +9,7 @@ PLATFORMS = [Platform.TTS]
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Reverso TTS from a config entry."""
-    await hass.config_entries.async_forward_entry_setup(entry, PLATFORMS)
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
 
