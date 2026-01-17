@@ -1,16 +1,33 @@
 {
-    "config": {
-        "abort": {
-            "already_configured": "Il servizio è già configurato"
-        },
-        "step": {
-            "user": {
-                "data": {
-                    "language": "Lingua",
-                    "pitch": "Velocità di parlato",
-                    "bitrate": "Bitrate"
-                }
-            }
+  "title": "Reverso TTS",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura Reverso TTS",
+        "description": "Imposta i parametri di base del servizio Reverso TTS.",
+        "data": {
+          "language": "Lingua",
+          "pitch": "Velocità (1.0 = normale)",
+          "bitrate": "Bitrate (non utilizzato)"
         }
+      }
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni Reverso TTS",
+        "description": "Seleziona la voce da utilizzare.",
+        "data": {
+          "voice_id": "Voce"
+        }
+      }
+    }
+  },
+  "services": {
+    "list_voices": {
+      "name": "Elenca voci",
+      "description": "Restituisce l'elenco completo delle voci disponibili."
+    }
+  }
 }

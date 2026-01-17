@@ -4,9 +4,10 @@
   "version": "1.1.1",
   "documentation": "https://github.com/romans3/ReversoTTS-HA",
   "issue_tracker": "https://github.com/romans3/ReversoTTS-HA/issues",
+  "requirements": [],
   "dependencies": [],
   "codeowners": ["@romans3"],
-  "requirements": ["pyttsreverso==0.4"],
-  "iot_class": "cloud_push",
-  "config_flow": true
+  "iot_class": "cloud_polling",
+  "config_flow": true,
+  "platforms": ["tts"]
 }

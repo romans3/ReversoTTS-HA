@@ -1,0 +1,22 @@
+say:
+  name: Say
+  description: Riproduce un messaggio usando Reverso TTS con gestione cache locale.
+  fields:
+    message:
+      description: Testo da pronunciare.
+      example: "Ciao, come stai?"
+      required: true
+    media_player:
+      description: Entity ID del media player (es. media_player.google_home).
+      example: media_player.soggiorno
+      required: true
+    voice_id:
+      description: ID della voce da utilizzare (es. Fabiana22k_HQ).
+      example: Fabiana22k_HQ
+    speed:
+      description: Velocità di riproduzione (0.5 - 2.0).
+      example: 1.0
+
+list_voices:
+  name: Elenca voci
+  description: Restituisce la lista completa delle voci disponibili tramite l'evento 'reversotts_voices'.

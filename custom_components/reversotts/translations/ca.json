@@ -1,0 +1,33 @@
+{
+  "title": "Reverso TTS",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurar Reverso TTS",
+        "description": "Defineix els paràmetres bàsics del servei Reverso TTS.",
+        "data": {
+          "language": "Llengua",
+          "pitch": "Velocitat (1.0 = normal)",
+          "bitrate": "Bitrate (no utilitzat)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcions de Reverso TTS",
+        "description": "Selecciona la veu que vols utilitzar.",
+        "data": {
+          "voice_id": "Veu"
+        }
+      }
+    }
+  },
+  "services": {
+    "list_voices": {
+      "name": "Llistar veus",
+      "description": "Retorna la llista completa de veus disponibles."
+    }
+  }
+}
