@@ -150,10 +150,10 @@ There are several ways how to use TTS service.
       to: 'on'
     condition:
     action:
-    - data:
+    - service: reversotts.say
+      data:
         message: "This is a Test For GitHub Readme"
-      service: reversotts.say
-      entity_id: media_player.google_home
+        media_player: media_player.google_home
   ```
   
   **Good Luck !**
