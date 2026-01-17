@@ -1,5 +1,5 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-# ReversoTTS component for HomeAssistant
+# ReversoTTS component for HomeAssistant (Work with Homeassistant 2026.1.0)
 
 The `ReversoTTS` text-to-speech platform uses online Reverso Text-to-Speech engine to read a text with natural sounding voices.
 
@@ -152,8 +152,8 @@ There are several ways how to use TTS service.
     action:
     - data:
         message: "This is a Test For GitHub Readme"
-      service: tts.reversotts_say
-      entity_id: media_player.google_home_mini_salon 
+      service: tts.reversotts.say
+      entity_id: media_player.google_home
   ```
   
   **Good Luck !**
