@@ -152,7 +152,7 @@ There are several ways how to use TTS service.
     action:
     - data:
         message: "This is a Test For GitHub Readme"
-      service: tts.reversotts.say
+      service: reversotts.say
       entity_id: media_player.google_home
   ```
   
