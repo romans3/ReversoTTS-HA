@@ -20,6 +20,8 @@ So after that you need to see like this example :
 
 ### Configuration By Homeassistant UI
 
+- With UI: go in INTEGRATIONS, click on ADD Integrations and selection "Reverso TTS", and click ADD. Then enter setup request value.
+
 #### Language
 
 The language to use. Supported languages are in this table, please use only the name from **LangCode** column:
