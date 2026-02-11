@@ -1,25 +1,24 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-# ReversoTTS component for HomeAssistant (Work with Homeassistant 2026.1.0)
+## ☕ Support the Project
+[![Buy me a coffee](https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg)](https://paypal.me/giusepperomano1972)<span style="margin-left:15px;font-size:28px !important;">[Buy me a coffee](https://paypal.me/giusepperomano1972)</span></a>
+### [Support my work with a donation](https://paypal.me/giusepperomano1972)
+
+Every donation helps me continue to develop and improve this custom! 🙏
+
+# ReversoTTS component for HomeAssistant (Work with Homeassistant 2026.2.1)
 
 The `ReversoTTS` text-to-speech platform uses online Reverso Text-to-Speech engine to read a text with natural sounding voices.
 
 ## Installation
 
-### With HACS
-
-You can install it from within HACS by clicking on the button below (recommended).
-
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=PhoenixR49&repository=hass-huggingchat-conversation&category=Integration)
-
 ### Manually
 
-First download all files in folder https://github.com/rt400/ReversoTTS-HA/tree/master/custom_components/reversotts .
+First download all files in folder https://github.com/romans3/ReversoTTS-HA/tree/master/custom_components/reversotts .
 Now you need to create folder "reversotts" in your HomeAssistant config/custom_components folder and copy all files that you already download.
 So after that you need to see like this example :
 
 ![GitHub Logo](/images/folders.png)
 
-### Configuration Optinal Variables
+### Configuration By Homeassistant UI
 
 #### Language
 
@@ -123,21 +122,33 @@ The speak speed. Supported speed are `10-100`, 100 is normal speak.
 
 default: "`100`"
 
-#### Bitrate
-
-The `bitrate` for sound quailty. Supported bitrate are `22k, 96k, 128k, 192k, 320k`
-
-default: "`128k`"
-
 ## Examples of how to use
 
 There are several ways how to use TTS service.
 
 * Through call a service in HomeAssistant Developer Tools, in this example i used with Google Home Mini Speaker:
 
-  ![GitHub Logo](/images/service_small.png)
+### REVERSO TTS ###
+
+    service: tts.speak
+    target:
+      entity_id: tts.reverso_tts
+    data:
+      message: "Test Reverso TTS."
+      media_player_entity_id: media_player.google_home
+      options:
+        voice_id: "Vittorio22k_HQ"
+
+	service: tts.speak
+	data:
+	  entity_id: tts.reverso_tts
+	  message: "Test Message"
+	  media_player_entity_id: media_player.google_home
+	  options:
+		voice_id: "Vittorio22k_HQ"
+		speed: "1.0"
   
-* Through Automation in HomeAssistant , in this example i send to my Google HomeMini a meesage :
+* Through Automation in HomeAssistant , in this example i send to my Google HomeMini a message :
 
   ```
   - id: Test Message
@@ -150,10 +161,11 @@ There are several ways how to use TTS service.
       to: 'on'
     condition:
     action:
-    - service: reversotts.say
-      data:
-        message: "This is a Test For GitHub Readme"
-        media_player: media_player.google_home
+      - service: reversotts.say
+        data:
+          message: "Test Message"
+          media_player: "media_player.google_home"
+          voice_id: "Vittorio22k_HQ"
   ```
   
   **Good Luck !**
